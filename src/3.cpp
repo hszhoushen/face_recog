@@ -29,7 +29,6 @@ using namespace std;
 
 
 //test_define
-
 //#define pic_test
 //model
 cv::Ptr<cv::FaceRecognizer> model = cv::createLBPHFaceRecognizer();//LBP的这个方法在单个人脸验证方面效果最好
@@ -362,11 +361,12 @@ void recog_and_draw( IplImage* img )
 			strStream << predicted_confidence;
 			string ss = strStream.str(); 
 
-			//cvText(img, ss.c_str(), r->x+r->width*0.5, r->y);
+			//cvText(img, ss.c_str(), r->x+r->width*0.5, r->y); 
 			//cout<<ss.c_str()<<endl;
 
 
-            cout << "person is: " << predictedLabel << endl;
+      cout << "person is: " << predictedLabel << endl;
+      cout << "confidence: "  << predicted_confidence << endl;
             
 			if(predictedLabel == 3){
 				//cvText(img, "Result:YES", 0, 30); 
@@ -537,8 +537,8 @@ int main(int argc, char *argv[])
     double dConfidence = 75.0;
     
     // 加载人脸识别分类器 
-	cascade = (CvHaarClassifierCascade*)cvLoad( cascade_name, 0, 0, 0 ); 
-	if( !cascade ) 
+		cascade = (CvHaarClassifierCascade*)cvLoad( cascade_name, 0, 0, 0 ); 
+		if( !cascade ) 
     {
         cout<<"无法加载人脸识别分类器文件，请确认！"<<endl;
     }
