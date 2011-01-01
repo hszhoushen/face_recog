@@ -13,10 +13,10 @@ LFLAGS=-lpthread -lm -lrt\
 		-lopencv_contrib -lopencv_photo -lopencv_stitching\
 		-lopencv_superres -lopencv_video
 
-SRCS=3.cpp
+SRCS=take_face.cpp
 
 OBJS=$(SRCS:.cpp=.o)
-EXEC=a.out
+EXEC=take_face.out
 
 all:$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(EXEC) $(LFLAGS)
